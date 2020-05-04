@@ -1,0 +1,119 @@
+// @import 'fonts';
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+body {
+	font-size: 16px;
+	color: $color;
+	background: linear-gradient(to left,rgb(159, 0, 252), rgb(0, 0, 0));
+}
+
+#app {
+	font: {
+		size: 1em;
+		family: 'Comic Neue', cursive;
+		weight: 600;
+	}
+
+	text-align: center;
+	margin: 0em auto 2em;
+	max-width: 48em;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.particles{
+	position: fixed;
+	top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1
+}
+
+a {
+	color: #fffa0d;
+}
+
+h1 {
+	font: {
+		size: 2.25em;
+		weight: 800;
+		style: normal;
+	}
+
+	text-align: center;
+	letter-spacing: -1px;
+}
+
+h1:first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	margin-bottom: 1em;
+}
+
+.content {
+	font-size: 1.15em;
+	line-height: 1.5em;
+	padding: 1.5em 1.75em;
+}
+
+article {
+	text-align: left;
+}
+
+// animation
+
+[v-cloak] {
+	display: none;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: all 0.2s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+	transform: scale(0.9);
+	opacity: 0;
+}
+.router-animate-enter-active{
+	animation: coming .5s;
+	opacity: 0;
+}
+
+.router-animate-leave-active{
+	animation: going .5s;
+}
+
+
+  @keyframes going {
+	0% {
+	  transform: translateX(0);
+	}
+	100% {
+	  transform: translateX(50px);
+	  opacity: 0;
+	}
+  }
+
+  @keyframes coming {
+	0% {
+	  transform: translateX(-50px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	#app {
+		font-size: 0.85em;
+	}
+}

@@ -1,29 +1,23 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+	<div id="app">
+		<vue-particles class="particles"></vue-particles>
+		<header>
+			<the-navigation />
+		</header>
+		<transition class="content" name="router-animate" mode="out-in">
+			<router-view />
+		</transition>
+	</div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import TheNavigation from './components/TheNavigation.vue'
+
+export default {
+	components: {
+		TheNavigation
+	}
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+</script>
+
+<style src="@/assets/scss/main.scss" lang="scss"></style>

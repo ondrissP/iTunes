@@ -1,18 +1,26 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+	<section class="home">
+		<img v-cloak alt="headphones" src="../assets/girl-headphones.jpg" />
+		<hello-world msg="iTunes Music App" />
+	</section>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HelloWorld from '@/components/home/HelloWorld.vue'
 
 export default {
-  name: "home",
-  components: {
-    HelloWorld
-  }
-};
+	name: 'home',
+	components: {
+		HelloWorld
+	}
+}
 </script>
+
+<style scoped lang="scss">
+img {
+	margin-bottom: 1em;
+	width: 90%;
+	border-radius: 1em;
+	filter: blur(1px);
+}
+</style>
